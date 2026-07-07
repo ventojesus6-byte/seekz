@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeekZ - Recarga - ID</title>
+    <!-- Línea para agregar el Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="/css/recargas.css">
+</head>
+
+<body>
+    <script src="/script/Calcular-taza.js"></script>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header>
+        <div class="logo">SeekZ ⚡</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN DE BIENVENIDA -->
+    <section class="hero">
+        <h1>Recargas Inmediatas para tus Juegos</h1>
+        <p>Seguro, rápido y sin comisiones ocultas.</p>
+    </section>
+
+    <!-- CATÁLOGO DE VIDEOJUEGOS -->
+    <main class="container">
+        <h2 class="seccion-titulo">Selecciona tu Juego</h2>
+
+        <div class="grid-juegos">
+
+            <!-- Tarjeta 1: Free Fire -->
+            <div class="tarjeta">
+                <img src="img/free-fire.png" alt="Free Fire">
+                <div class="tarjeta-info">
+                    <h3>Free Fire</h3>
+                    <a href="#seccion-compra" class="btn-recargar" onclick="seleccionarJuego('Free Fire')">Recargar
+                        Diamantes</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECCIÓN DEL FORMULARIO DE COMPRA -->
+    <section class="container" id="seccion-compra" style="margin-top: 60px; max-width: 600px;">
+        <h2 class="seccion-titulo">Detalles de la Recarga</h2>
+
+        <div style="background-color: #161b22; padding: 30px; border-radius: 12px; border: 1px solid #30363d;">
+            <form id="formulario-recarga">
+
+                <!-- Juego Seleccionado -->
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #8b949e;">Juego
+                        Seleccionado:</label>
+                    <input type="text" id="juego-actual" value="Ninguno - Selecciona arriba" readonly
+                        style="width: 100%; padding: 12px; background-color: #0d0f12; border: 1px solid #30363d; border-radius: 6px; color: #00ff66; font-size: 16px; font-weight: bold; text-align: center;">
+                </div>
+
+
+                <!-- ID del Jugador -->
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #8b949e;">
+                        ID de Usuario / Nickname:
+                        <!-- Icono insertado directamente en tu label original -->
+                        <span class="tooltip-container">
+                            <span class="warning-icon">⚠</span>
+                            <span class="tooltip-text">  Para garantizar una acreditación exitosa y sin demoras,<br>verifique minuciosamente la exactitud de su ID de usuario o Nickname.</span>
+                        </span>
+                    </label>
+                    <input type="text" id="id-jugador" placeholder="Ej: 123456789" required
+                        style="width: 100%; padding: 12px; background-color: #0d0f12; border: 1px solid #30363d; border-radius: 6px; color: white;">
+                </div>
+
+                <!-- Selección de Paquete -->
+                <div style="margin-bottom: 25px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #8b949e;">Selecciona la cantidad:</label>
+                    <select id="paquete-saldo" required
+                        style="width: 100%; padding: 12px; background-color: #0d0f12; border: 1px solid #30363d; border-radius: 6px; color: white; font-size: 16px;">
+                        <option value="">-- Primero selecciona un juego arriba --</option>
+                    </select>
+                </div>
+
+                <!-- Selecciona Método de pago -->
+                <div style="margin-bottom: 25px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #8b949e;">Selecciona el
+                        método de pago:</label>
+                    <select id="metodo-pago" required
+                        style="width: 100%; padding: 12px; background-color: #0d0f12; border: 1px solid #30363d; border-radius: 6px; color: white; font-size: 16px;">
+                        <option value="" disabled selected>-- Elige un método de pago --</option>
+                        <option value="Banco de Venezuela">Banco de Venezuela</option>
+                        <option value="Pago Móvil">Pago Móvil</option>
+                        <option value="Binance Pay (USDT)">Binance Pay (USDT)</option>
+                    </select>
+                </div>
+
+
+        <!-- Botón de Pago -->
+        <button type="submit"
+            style="width: 100%; background-color: #00ff66; color: #0d0f12; border: none; padding: 15px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: background 0.3s;">
+            Proceder al Pago 🚀
+        </button>
+
+        <!-- Contenedor del indicador de tasa (colocar debajo del botón) -->
+        <div class="tasa-binance-container">
+            <p>Tasa de cambio aproximada: <span id="tasa-usdt">Cargando...</span></p>
+        </div>
+        </form>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 SeekZ - Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE SOPORTE -->
+    <a href="https://wa.me/584123874732?text=¡Hola! Tengo una duda sobre las recargas de videojuegos." 
+    target="_blank"
+    class="btn-soporte-flotante"
+    title="Soporte Técnico">
+    💬 ¿Soporte?
+    </a>
+</body>
+</html>
+
+    <script src="/script/logica_interactiva.js"></script>

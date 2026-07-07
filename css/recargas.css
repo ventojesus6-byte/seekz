@@ -1,0 +1,236 @@
+        /* --- ESTILOS GENERALES (CSS) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0f12;
+            color: #ffffff;
+        }
+
+        /* --- BARRA DE NAVEGACIÓN --- */
+        header {
+            background-color: #161b22;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #00ff66;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ff66;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #00ff66;
+        }
+
+        /* --- SECCIÓN PRINCIPAL --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(13, 15, 18, 0.9), #0d0f12);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #8b949e;
+            font-size: 18px;
+        }
+
+        /* --- CONTENEDOR DE JUEGOS --- */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .seccion-titulo {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-left: 5px solid #00ff66;
+            padding-left: 10px;
+        }
+
+        .grid-juegos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            /* Espacio entre los cuadros */
+        }
+
+        /* --- TARJETAS DE JUEGOS --- */
+        .tarjeta {
+            background-color: #161b22;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #30363d;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            border-color: #00ff66;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .tarjeta-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tarjeta-info h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .btn-recargar {
+            display: inline-block;
+            background-color: #00ff66;
+            color: #0d0f12;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 13px;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .btn-recargar:hover {
+            background-color: #00cc52;
+        }
+
+        /* --- PIE DE PÁGINA --- */
+        footer {
+            background-color: #161b22;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            color: #8b949e;
+            font-size: 14px;
+            border-top: 1px solid #30363d;
+        }
+
+        /* --- BOTÓN FLOTANTE DE SOPORTE --- */
+        .btn-soporte-flotante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            /* Verde oficial de WhatsApp */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            /* Asegura que se vea por encima de todo */
+            transition: transform 0.3s, background-color 0.3s;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-soporte-flotante:hover {
+            background-color: #1ebd56;
+            transform: scale(1.05);
+            /* Se agranda un poquito al pasar el mouse */
+        }
+
+
+
+
+        /* Contenedor del icono (necesario para posicionar el texto relativo a él) */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            margin-left: 6px;
+            /* Separación del título */
+            cursor: help;
+            /* Cambia el cursor a modo de ayuda */
+        }
+
+        /* Estilo del triángulo de advertencia */
+        .warning-icon {
+            color: #ffcc00;
+            /* Color amarillo de advertencia */
+            font-weight: bold;
+        }
+
+        /* Cuadro de texto oculto por defecto */
+        .tooltip-text {
+            visibility: hidden;
+            position: absolute;
+            bottom: 125%;
+            /* Lo posiciona arriba del icono */
+            left: 50%;
+            transform: translateX(-50%);
+            /* Lo centra perfectamente */
+
+            /* Diseño del cuadro flotante */
+            background-color: #1f232b;
+            /* Fondo oscuro a juego con tu web */
+            color: #ffffff;
+            /* Letras blancas */
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #ffcc00;
+            /* Borde amarillo sutil */
+            font-size: 12px;
+            white-space: nowrap;
+            /* Evita que el texto se rompa en varias líneas */
+            z-index: 10;
+            /* Asegura que flote por encima de todo */
+
+            /* Suavizado de aparición */
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        /* Efecto Hover: Muestra el cuadro al pasar el mouse */
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Estilos adaptados al modo oscuro de tu interfaz */
+.tasa-binance-container {
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #a0aec0; /* Gris claro */
+}
+
+#tasa-usdt {
+    color: #00ff66; /* Verde neón igual a tus botones */
+    font-weight: bold;
+}
